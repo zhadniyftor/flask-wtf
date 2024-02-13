@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2 align="left">Список профессий</h2>
+{% if error %}
+  <h3>Параметр списка указан неверно!</h3>
+{% else %}
+
+  {% if param=='ol' %}
+    <ol>
+      {% for job in list %}
+        <li>{{ job }}</li>
+      {% endfor %}
+    </ol>
+  {% endif %}
+
+  {% if param=='ul' %}
+    <ul>
+      {% for job in list %}
+        <li>{{ job }}</li>
+      {% endfor %}
+    </ul>
+
+  {% endif %}
+
+{% endif %}
+{% endblock %}
